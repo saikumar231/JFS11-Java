@@ -1,0 +1,159 @@
+// Area of Circle
+
+import java.util.Scanner;
+public class areaofcircle {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the radius of circle:");
+		int r = sin.nextInt();
+		double area_of_circle = 3.14 * r * r;
+		System.out.println("Area of circle is: " + area_of_circle);
+	}
+}
+o/p:
+Enter the radius of circle:
+20
+Area of circle is: 1256.0
+==============================================
+
+==============================================
+// Area of Cuboid
+
+import java.util.Scanner;
+public class areaofcuboid {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter length: ");
+		int l = sin.nextInt();
+		System.out.println("Enter width: ");
+		int w = sin.nextInt();
+		System.out.println("Enter height: ");
+		int h = sin.nextInt();
+		double areacuboid = 2 * (l * w + w * h + h * l);
+		System.out.println("The Area of Cuboid: " + areacuboid);
+	}
+}
+o/p:
+Enter length: 
+2
+Enter width: 
+3
+Enter height: 
+4
+The Area of Cuboid is 52.0
+====================================================
+// volume of Cuboid
+
+import java.util.Scanner;
+public class volumeofcuboid {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter length: ");
+		int length = sin.nextInt();
+		System.out.println("Enter breadth: ");
+		int breadth = sin.nextInt();
+		System.out.println("Enter Height: ");
+		int height = sin.nextInt();
+		double volumecuboid = length * breadth * height;
+		System.out.println("volume of cuboid is: " + volumecuboid);
+	}
+}
+o/p:
+Enter length: 
+2
+Enter breadth: 
+3
+Enter Height: 
+4
+volume of cuboid is: 24.0
+=====================================================
+// Area of Hemi Sphere
+
+import java.util.Scanner;
+public class areaofhemisphere {
+	public static void main(String[] args) {
+		Scanner sin=new Scanner(System.in);
+    System.out.println("Enter the radius of hemisphere: ");
+    int radius=sin.nextInt();
+    double areahemisphere=3*3.14*radius*radius;
+    System.out.println("volume of sphere: "+areahemisphere);
+	}
+}
+o/p:
+Enter the radius of hemisphere: 
+2
+volume of sphere: 37.68
+====================================================
+// volume of Hemisphere
+
+import java.util.Scanner;
+public class volumehemisphere {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the radius of hemisphere: ");
+		int radius = sin.nextInt();
+		double volumehemisphere = ((double) 2 / 3) * 3.14 * (Math.pow(radius, 3));
+		System.out.println("The Volume of hemiSphere is: " + volumehemisphere);
+	}
+}
+o/p:
+Enter the radius of hemisphere: 
+2
+The Volume of hemiSphere is: 16.746666666666666
+====================================================
+//Area of Sphere
+
+import java.util.Scanner;
+public class areaofsphere {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter radius of sphere: ");
+		int radius = sin.nextInt();
+		double areasphere = 4 * 3.14 * radius * radius;
+		System.out.println("The Area of Sphere is: " + areasphere);
+	}
+}
+o/p:
+Enter radius of sphere: 
+3
+The Area of Sphere is: 113.03999999999999
+================================================
+// Volume of Sphere
+
+import java.util.Scanner;
+public class volumeofsphere {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the radius of: ");
+		int radius = sin.nextInt();
+		double volumesphere = ((double) 4 / 3) * 3.14 * radius * radius * radius;
+		System.out.println("The volume of Sphere is: " + volumesphere);
+	}
+}
+o/p:
+Enter the radius of: 
+2
+The volume of Sphere is: 33.49333333333333
+====================================================
+// Simple Intrest
+
+import java.util.Scanner;
+public class simpleinterest {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Principle Amount: ");
+		int p = sc.nextInt();
+		System.out.println("Enter the Time: ");
+		int t = sc.nextInt();
+		System.out.println("Enter the Rate: ");
+		double r = sc.nextDouble();
+		double si = (p * t * r) / 100;
+		System.out.println("Simple interst is: " + si);
+		double total_amount = si + p;
+		System.out.println("The Total amount is:" + total_amount);
+	}
+}
+o/p:
+si=150
+totalamount=1150.0
+p=1000,t=5,r=3.
