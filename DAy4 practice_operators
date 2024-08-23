@@ -1,0 +1,78 @@
+// Arithmetic exception error and some infinity values
+
+public class arithmetic {
+	public static void main(String[] args) {
+	System.out.println(10/0);
+	System.out.println(-0.0/0);
+	System.out.println(-10.0/0);
+	System.out.println(10.0/0);
+	System.out.println(0.0/0);
+	}
+}
+o/p:
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at com.codegnan.operators.arithmetic.main(arithmetic.java:5)
+NaN
+-Infinity
+Infinity
+NaN
+============================================================================
+// Bit wise operator
+import java.util.Scanner;
+
+public class bitwise {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		// Prompt the user to enter two integers
+		System.out.print("Enter integer 1: ");
+		int num1 = scanner.nextInt();
+		System.out.print("Enter integer 2: ");
+		int num2 = scanner.nextInt();
+		// Perform bitwise operations
+		int bitwiseAnd = num1 & num2;
+		int bitwiseOr = num1 | num2;
+		int bitwiseXor = num1 ^ num2;
+		int bitwiseComplementNum1 = ~num1;
+		int leftShiftNum1 = num1 << 1;
+		int rightShiftNum2 = num2 >> 1;
+		int unsignedRightShiftNum2 = num2 >>> 1;
+		System.out.println("Bitwise AND (" + num1 + " & " + num2 + ") : " + bitwiseAnd);
+		System.out.println("Bitwise OR (" + num1 + " | " + num2 + ") : " + bitwiseOr);
+		System.out.println("Bitwise XOR (" + num1 + " ^ " + num2 + ") : " + bitwiseXor);
+		System.out.println("Bitwise NOT (~" + num1 + ") : " + bitwiseComplementNum1);
+		System.out.println("Left Shift (" + num1 + " << 1) : " + leftShiftNum1);
+		System.out.println("Right Shift (" + num2 + " >> 1) : " + rightShiftNum2);
+		System.out.println("Unsigned Right Shift (" + num2 + " >>> 1) : " + unsignedRightShiftNum2);
+	}
+}
+o/p:
+
+Enter integer 1: 10
+Enter integer 2: 20
+Bitwise AND (10 & 20) : 0
+Bitwise OR (10 | 20) : 30
+Bitwise XOR (10 ^ 20) : 30
+Bitwise NOT (~10) : -11
+Left Shift (10 << 1) : 20
+Right Shift (20 >> 1) : 10
+Unsigned Right Shift (20 >>> 1) : 10
+=======================================================================================================
+// Strin concatination
+
+public class stringconcatination {
+	public static void main(String[] args) {
+		int a=10, b=20, c=30;
+		String d="SAI";
+		System.out.println(a+b+c+d);
+		System.out.println(b+c+d+a);
+		System.out.println(c+d+a+b);
+		System.out.println(d+a+b+c);
+	}
+}
+
+o/p:
+60SAI
+50SAI10
+30SAI1020
+SAI102030
