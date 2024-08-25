@@ -59,3 +59,42 @@ o/p:
 Enter the Amount: 
 50
 The amount after removing discount: 45
+===========================================================================================================
+
+// Major or Minor using ternary operator
+import java.util.Scanner;
+
+public class majorminor {
+
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter Age :");
+		int age = sin.nextInt();
+		String result = age > 18 ? "Major" : "Minor";
+		System.out.println(result);
+	}
+
+}
+
+o/p:
+Enter Age :
+19
+Major
+===================================================================================================
+// for the given marks what is the grade.
+import java.util.Scanner;
+public class marksgrade {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the marks: ");
+		int marks = sin.nextInt();
+		char grade = marks > 90 ? 'A'
+				: (marks > 80) ? 'B' : (marks > 70) ? 'C' : (marks > 60) ? 'D' : (marks > 50) ? 'E' : 'F';
+		System.out.println("grade for the marks is: " + grade);
+	}
+}
+
+o/p:
+Enter the marks: 
+97
+grade for the marks is: A
