@@ -1,0 +1,61 @@
+// Leap Year or NOt
+
+import java.util.Scanner;
+public class leapyear {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the Year: ");
+		int year = sin.nextInt();
+		String result = (year % 400 != 100) ? "leap year" : "Non-leap year";
+		System.out.println("The Leap year is: " + result);
+	}
+}
+
+o/p:
+Enter the Year: 
+2002
+The Leap year is: leap year
+====================================================================================
+// Discount price
+
+import java.util.Scanner;
+public class shopping {
+	public static void main(String[] args) {
+		Scanner sin=new Scanner(System.in);
+		System.out.println("Enter the purchase amount: ");
+		double purchaseamount=sin.nextDouble();
+		double discount=(purchaseamount>=100)?0.2:(purchaseamount>=50)?0.1:0.0;
+		double discountamount=purchaseamount*discount;
+		System.out.println("The discount for the products are: "+discount);
+		double remainamount=purchaseamount-discountamount;
+		System.out.println("After applying discount pay the remain amount : "+remainamount);	
+	}
+}
+
+o/p:
+Enter the purchase amount: 
+120
+The discount for the products are: 0.2
+After applying discount pay the remain amount : 96.0
+=============================================================================================
+// Discount using ternary operator
+
+import java.util.Scanner;
+public class ternaryoperaror {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the Amount: ");
+		int amount = sin.nextInt();
+		int discount = (amount * 20 / 100);
+		int discount1 = (amount * 10 / 100);
+		int discount2 = 0;
+		int totalamount = amount >= 100 ? discount : (amount >= 50) ? discount1 : (amount <= 49) ? discount2 : 0;
+		int result = amount - totalamount;
+		System.out.println("The amount after removing discount: "+result);
+	}
+}
+
+o/p:
+Enter the Amount: 
+50
+The amount after removing discount: 45
