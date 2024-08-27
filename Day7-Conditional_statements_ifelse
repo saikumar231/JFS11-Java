@@ -1,0 +1,72 @@
+// Bank Balance checking 
+import java.util.Scanner;
+public class bankbalance {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the Bank Balance: ");
+		int bankbalance = sin.nextInt();
+		System.out.println("Enter the Withdrawl Amount");
+		int withdrawlamount = sin.nextInt();
+		if (withdrawlamount <= bankbalance) {
+			int remainingbalance = bankbalance - withdrawlamount;
+			System.out.println(withdrawlamount+" is withdrawled.......The remaining balance in the bank account is " + remainingbalance);
+		} else {
+			System.out.println("Insufficient Bank Balance");
+		}
+	}
+}
+o/p:
+Enter the Bank Balance: 
+2000
+Enter the Withdrawl Amount
+1000
+1000 is withdrawled.......The remaining balance in the bank account is 1000
+===============================================================================================================================================
+// Positive number or Negative Number
+import java.util.Scanner;
+public class Ifexample {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the Number: ");
+		int number = sin.nextInt();
+		if (number > 0) {
+			System.out.println("The given Number " + number + " is Positive");
+		} else {
+			// here there is no specific logic for else block.
+			// System.out.println("The given Number " + number + " is Negative");
+		}
+	}
+}
+o/p:
+Enter the Number: 
+5
+The given Number 5 is Positive
+=======================================================================================================================================
+// Weather conditions
+import java.util.Scanner;
+public class weather {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the Temperature of the Day: ");
+		float temperature = sin.nextFloat();
+		if (temperature > 30) {
+			System.out.println("Weather is Too Hot.... wear cotton clothes");
+		} else {
+			// Here there is no specific logic foe else block
+		}
+		if (temperature > 20 && temperature <= 30) { // here we can use & or && symbol.
+			System.out.println("Weather is normal enjoy your day");
+		} else {
+			// Here there is no specific logic foe else block
+		}
+		if (temperature > 10 && temperature <= 20) {
+			System.out.println("Weather is Too Cold.... wear the sweater");
+		} else {
+			// Here there is no specific logic foe else block
+		}
+	}
+}
+o/p:
+Enter the Temperature of the Day: 
+45
+Weather is Too Hot.... wear cotton clothes
