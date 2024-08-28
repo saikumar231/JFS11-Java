@@ -1,0 +1,44 @@
+// print n numbers using do while
+import java.util.Scanner;
+public class Nnumbers {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the Number: ");
+		int number = sin.nextInt();
+		int i = 1;
+		do {
+			System.out.println(i);
+			i++;
+		} while (i <= number);
+	}
+}
+==================================================
+// print even numbers using do while loop
+import java.util.Scanner;
+public class dowhileeven {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the Number: ");
+		int number = sin.nextInt();
+		int i = 0;
+		do {
+			System.out.println(i);
+			i += 2;
+		} while (i <= number);
+	}
+}
+====================================================
+// print odd numbers using do while loop
+import java.util.Scanner;
+public class dowhileodd {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the Number: ");
+		int number = sin.nextInt();
+		int i = 1;
+		do {
+			System.out.println(i);
+			i = i + 2;
+		} while (i <= number);
+	}
+}
