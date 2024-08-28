@@ -1,0 +1,181 @@
+import java.util.Scanner;
+
+public class ifExample1 {
+
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter City Name: ");
+		String cityname = sin.next();
+		if (cityname.equalsIgnoreCase("Hyderabad")) {
+			System.out.println("Hello Hyderabadi...... Adamm");
+		} else if (cityname.equalsIgnoreCase("Chennai")) {
+			System.out.println("Hello Madrasi........ Vanakam");
+		} else if (cityname.equalsIgnoreCase("Banglore")) {
+			System.out.println("Hello Kannadiga....... Nmaskar");
+		} else {
+			System.out.println("Please enter valid city name.....");
+		}
+
+	}
+
+}
+======================================================================
+import java.util.Scanner;
+
+public class studentmarks {
+
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("enter the Marks of the Student: ");
+		int marks = sin.nextInt();
+		if (marks > 80) {
+			System.out.println("Passed in distnict level.");
+		} else if (marks > 70 && marks < 80) { // or we can use else if (marks > 70)
+			System.out.println("Passed in first class.");
+		} else if (marks > 60) { // or we can use else if(marks > 60 && marks < 70)
+			System.out.println("Passed in Second class");
+		} else if (marks > 50) { // or we can use else if(marks > 50 && marks < 60)
+			System.out.println("Passed in Third class.");
+		} else {
+			System.out.println("Failure");
+		}
+
+	}
+
+}
+==============================================================================
+import java.util.Scanner;
+
+public class rechargeplan {
+
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the Talk time : ");
+		int time = sin.nextInt();
+		if (time < 100) {
+			System.out.println("Less than 100 minutes talk time is Basic plan");
+		} else if (time < 300) {
+			System.out.println("Less than 300 minutes talk time is Standard plan");
+		} else if (time < 500) {
+			System.out.println("Less than 500 minutes talk time is Premium plan");
+		} else {
+			System.out.println("Above 500 minutes talk time is unlimited");
+		}
+
+	}
+
+}
+==================================================================================
+// using switch case
+import java.util.Scanner;
+
+public class switchcase {
+
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter Day of Week: ");
+		int dayname = sin.nextInt();
+		switch (dayname) {
+		case 1:
+			System.out.println("Sunday");
+			break;
+		case 2:
+			System.out.println("Monday");
+			break;
+		case 3:
+			System.out.println("Tuesday");
+			break;
+		case 4:
+			System.out.println("wednesday");
+			break;
+		case 5:
+			System.out.println("Thursday");
+			break;
+		case 6:
+			System.out.println("Friday");
+			break;
+		case 7:
+			System.out.println("Saturday");
+			break;
+		default:
+			System.out.println("Please enter the valid from 1-7 numbers.");
+		}
+	}
+
+}
+===========================================================================
+import java.util.Scanner;
+
+public class vendingmachine {
+
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		int number = sin.nextInt();
+		switch (number) {
+		case 1:
+			System.out.println("Mango fruity juice");
+			break;
+		case 2:
+			System.out.println("Sprite");
+			break;
+		case 3:
+			System.out.println("Coke");
+			break;
+		case 4:
+			System.out.println("Thums up");
+			break;
+		case 5:
+			System.out.println("Limca");
+			break;
+		case 6:
+			System.out.println("Badam milk shake");
+			break;
+		default:
+			System.out.println("Please enter the numbers between 1-6 only.");
+		}
+	}
+
+}
+==========================================================================
+import java.util.Scanner;
+
+public class arithmetic {
+
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter n1 value: ");
+		int n1 = sin.nextInt();
+		System.out.println("Enter n2 value: ");
+		int n2 = sin.nextInt();
+		System.out.println("Choose the number: ");
+		int n = sin.nextInt();
+		switch (n) {
+		case 1:
+			double add = n1 + n2;
+			System.out.println("The Addition of " + n1 + " and " + n2 + " is " + add);
+			break;
+		case 2:
+			double sub = n1 - n2;
+			System.out.println("The Subtraction of " + n1 + " and " + n2 + " is " + sub);
+			break;
+		case 3:
+			double mul = n1 * n2;
+			System.out.println("The Multiplication of " + n1 + " and " + n2 + " is " + mul);
+			break;
+		case 4:
+			double div = n1 / n2;
+			System.out.println("The Division of " + n1 + " and " + n2 + " is " + div);
+			break;
+		case 5:
+			double mod = n1 % n2;
+			System.out.println("The Modulo Division of " + n1 + " and " + n2 + " is " + mod);
+			break;
+		default:
+			System.out.println("Enter valid one");
+
+		}
+	}
+
+}
+
