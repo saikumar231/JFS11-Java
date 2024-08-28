@@ -178,4 +178,67 @@ public class arithmetic {
 	}
 
 }
+==================================================================================================================
+import java.util.Scanner;
+
+public class ATMmachine {
+
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		int balance=1000;
+		int pin=1234;
+		System.out.println("Enter your pin: ");
+		int entered_pin=sin.nextInt();
+		if(entered_pin!=pin) {
+			System.out.println("Please enter correct pin");
+			return;
+		}else {
+			// there is no use of this block
+		}
+		
+		System.out.println("Enter your choice here: ");
+		int n=sin.nextInt();
+		//do {
+		switch(n) {
+		case 1:
+			System.out.println("Balance in your Account is: "+balance);
+			break;
+		case 2:
+			System.out.println("Enter your Deposit Amount: ");
+			int deposit=sin.nextInt();
+			if(deposit%100!=0) {
+				System.out.println("Please deposit the multiples of Rs.100 notes only.");
+			}else if(deposit<500) {
+				System.out.println("Please deposit the above Rs.500 money only.");
+			}else {
+				int depositedbalance=deposit+balance;
+				System.out.println("The balance in your account is:"+depositedbalance);
+			}
+			break;
+		case 3:
+			System.out.println("Enter Amount to withdrawl:");
+			int withdraw=sin.nextInt();
+			if(withdraw%100!=0) {
+				System.out.println("Please enter the amount of multiples of Rs.100 only.");
+			}else if(withdraw<500) {
+				System.out.println("Please enter the amount above Rs.500 only.");
+			}else if(withdraw>balance) {
+				System.out.println("Insufficient balance in your account.");
+			}else {
+				int withdrawbalance=balance-withdraw;
+				System.out.println("The remaininh balance after withdrawl amount is: "+withdrawbalance);
+			}
+			break;
+		case 4:
+			System.out.println("After sucessfull transaction please press EXit button."+"Thank you visit again");
+			break;
+		default:
+			System.out.println("Please choose the options between 1 to 4.");
+		}
+	
+		//}while(n!=4);
+			
+	}
+	
+}
 
