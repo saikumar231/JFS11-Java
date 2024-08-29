@@ -1,0 +1,61 @@
+import java.util.Scanner;
+public class Armstrongnumber {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the number of 3 digits :");
+		int number = sin.nextInt();
+		int n1 = number;
+		int reverse = 0;
+		while (n1 != 0) {
+			int remainder = n1 % 10;
+			// reverse=reverse+remainder*remainder*remainder;
+			reverse = (int) (reverse + Math.pow(remainder, 3));
+			n1 = n1 / 10;
+		}
+		if (number == reverse) {
+			System.out.println("The given number " + number + " is Armstrong number");
+		} else {
+			System.out.println("The given number " + number + " is not a Armstrong number");
+		}
+	}
+}
+==========================================================================================
+package com.codegnan.day9;
+import java.util.Scanner;
+public class palindrome {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("enter the number here: ");
+		int number = sin.nextInt();
+		int originalnumber = number;
+		int reverse = 0;
+		while (originalnumber != 0) {
+			int remainder = originalnumber % 10;
+			reverse = reverse * 10 + remainder;
+			originalnumber = originalnumber / 10;
+		}
+		if (number == reverse) {
+			System.out.println("The given number " + number + " is a palindrome number.");
+		} else {
+			System.out.println("The given number " + number + " is not a palindrome.");
+		}
+	}
+}
+================================================================================================
+import java.util.Scanner;
+public class reversenumber {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		System.out.println("Enter the number to reverse: ");
+		int number = sin.nextInt();
+		int reverse = 0;
+		int originalnumber = number;
+		while (originalnumber != 0) {
+			int remainder = originalnumber % 10;
+			reverse = reverse * 10 + remainder;
+			originalnumber = originalnumber / 10;
+		}
+		System.out.println("The reverse of a number " + number + " is " + reverse);
+	}
+}
+===============================================================================================
