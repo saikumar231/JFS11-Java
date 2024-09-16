@@ -1,14 +1,28 @@
-package com.codegnan.oopprogram;
+package com.codegnan.Day19.oops;
+
+class parent{
+	public void methodOne() {
+		System.out.println("parent class m1 method");
+	}
+}
+class child extends parent{
+	public void methodTwo() {
+		System.out.println("child class m2 method");
+	}
+}
 
 public class Main {
 
 	public static void main(String[] args) {
-			car car1 = new car("Toyota","carmy",2020);
-			car car2 = new car("Honda","Accord",2018);
-			System.out.println("car1 Details : ");
-			car1.displayDetails();
-			System.out.println("car2 details : ");
-			car2.displayDetails();
+		parent p1=new parent();
+		p1.methodOne();
+		
+		child c1=new child();
+		c1.methodOne();
+		c1.methodTwo();
+		
+		parent p2 = new parent();
+		p2.methodOne();
 
 	}
 
