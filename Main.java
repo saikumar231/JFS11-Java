@@ -1,29 +1,19 @@
-package com.codegnan.Day19.oops;
-
-class parent{
-	public void methodOne() {
-		System.out.println("parent class m1 method");
-	}
-}
-class child extends parent{
-	public void methodTwo() {
-		System.out.println("child class m2 method");
-	}
-}
+package com.codegnan.day23;
 
 public class Main {
 
 	public static void main(String[] args) {
-		parent p1=new parent();
-		p1.methodOne();
+		System.out.println("Statement 1");
+		System.out.println("Statement 2");
+		try{
+			System.out.println(10/0);
+		}
+		catch(ArithmeticException e) { //ArithmeticException e or Exception e we can take in catch
+		System.out.println("Statement 3");
+		System.out.println("Statement 4");
+		System.out.println("Statement 5");
 		
-		child c1=new child();
-		c1.methodOne();
-		c1.methodTwo();
-		
-		parent p2 = new parent();
-		p2.methodOne();
-
+		}
 	}
 
 }
