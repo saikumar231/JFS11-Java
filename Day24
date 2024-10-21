@@ -1,0 +1,163 @@
+class InsufficientFundsException extends Exception {
+ 	// Constructor to initialize the exception with a message
+	
+ 	InsufficientFundsException(String message) {
+      	super(message);
+ 	}
+}
+ 
+//Class representing a bank account
+class BankAccount {
+ 	private String accountNumber;
+ 	private double balance;
+ 
+ 	// Constructor
+ 	public BankAccount(String accountNumber, double initialBalance) {
+      	this.accountNumber = accountNumber;
+      	this.balance = initialBalance;
+ 	}
+ 
+ 	// Method to withdraw money from the account
+ 	public void withdraw(double amount) throws InsufficientFundsException {
+      	if (amount > balance) {
+          	throw new InsufficientFundsException("Withdrawal amount exceeds available balance.");
+      	}
+      	balance -= amount;
+      	System.out.println("Withdrawal of $" + amount + " successfully processed.");
+ 	}
+ 
+ 	// Method to get current balance
+ 	public double getBalance() {
+      	return balance;
+ 	}
+}
+ 
+//Main class to demonstrate usage of the customized checked exception
+public class BankDemo {
+ 
+ 	public static void main(String[] args) {
+      	// Create a bank account with initial balance
+      	BankAccount account = new BankAccount("12345", 1000.0);
+ 
+      	try {
+          	// Attempt to withdraw an amount greater than the balance
+          	account.withdraw(1500.0);
+      	} catch (InsufficientFundsException e) {
+          	// Handle insufficient funds exception
+          	System.err.println("Error: " + e.getMessage());
+          	System.err.println("Available balance is $" + account.getBalance());
+      	}
+ 	}
+}
+=============================================================================
+// customized exception
+class TooYoungException extends Exception {
+
+	public TooYoungException(String message) {
+		super(message);
+	}
+
+}
+
+class TooOldException extends Exception {
+
+	public TooOldException(String message) {
+		super(message);
+	}
+
+}
+
+public class CustomizedException {
+	public void CheckEligibility(int age) throws TooYoungException, TooOldException {
+		if (age < 18) {
+			throw new TooYoungException(" Marriage cannot be approved..... Your age is below 18 years.");
+		} else if (age > 60) {
+			throw new TooOldException(
+					" Your age is already crossed the marriage age.....Marriage cannot be approved. ");
+		} else {
+			System.out.println("Marriage is approved...Details will be processed soon");
+		}
+	}
+
+	public static void main(String[] args) {
+		CustomizedException checker = new CustomizedException();
+		try {
+			checker.CheckEligibility(40);
+		} catch (TooYoungException | TooOldException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}
+==============================================================
+//Custom unchecked exception for underage voters
+class UnderAgeException extends RuntimeException {
+	public UnderAgeException(String message) {
+    	super(message);
+	}
+}
+
+//Custom unchecked exception for overage voters
+class OverAgeException extends RuntimeException {
+	public OverAgeException(String message) {
+    	super(message);
+	}
+}
+
+//Class to check voter eligibility based on age
+public class VoterEligibilityChecker {
+
+	// Method to check eligibility based on age
+	public void checkEligibility(int age) {
+    	final int VOTING_AGE = 18;
+    	final int MAXIMUM_AGE = 120; // Just for example, can be adjusted as needed
+
+    	if (age < VOTING_AGE) {
+        	throw new UnderAgeException("You are not eligible to vote: Age is below " + VOTING_AGE + " years.");
+    	} else if (age > MAXIMUM_AGE) {
+        	throw new OverAgeException("You are not eligible to vote: Age is above " + MAXIMUM_AGE + " years.");
+    	} else {
+        	System.out.println("You are eligible to vote.");
+
+        	// Additional logic based on eligibility
+        	if (age >= 18 && age <= 25) {
+             	System.out.println("You belong to the youth category.");
+        	} else if (age > 60) {
+             	System.out.println("You are a senior citizen.");
+        	} else {
+             	System.out.println("You are in the adult age group.");
+        	}
+
+        	// Additional processing logic can be added here, such as voter registration,
+        	// etc.
+    	}
+	}
+
+	// Example usage
+	public static void main(String[] args) {
+    	VoterEligibilityChecker checker = new VoterEligibilityChecker();
+
+    	try {
+        	// Trying to check eligibility for a voter aged 20
+        	checker.checkEligibility(20);
+
+        	// Trying to check eligibility for a voter aged 16 (will throw
+        	// UnderAgeException)
+        	checker.checkEligibility(16);
+
+        	// Trying to check eligibility for a voter aged 130 (will throw
+        	// OverAgeException)
+        	checker.checkEligibility(130);
+
+    	} 
+    	catch (UnderAgeException e) {
+        	System.out.println("Exception caught: " + e.getMessage());
+        	// Additional handling logic for underage voters can be added here
+    	}
+    	catch (OverAgeException e) {
+        	System.out.println("Exception caught: " + e.getMessage());
+        	// Additional handling logic for overage voters can be added here
+    	}
+	}
+}
