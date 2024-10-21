@@ -1,0 +1,54 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Statement 1");
+		System.out.println("Statement 2");
+		try{
+			System.out.println(10/0);
+		}
+		catch(ArithmeticException e) { //ArithmeticException e or Exception e we can take in catch
+		System.out.println("Statement 3");
+		System.out.println("Statement 4");
+		System.out.println("Statement 5");
+		
+		}
+	}
+
+}
+=====================================================
+  public class Main1 {
+
+	public static void main(String[] args) throws ArithmeticException {
+		System.out.println("Statement 1");
+		try{
+			System.out.println(10/0);
+		}
+		catch(ArithmeticException e){
+			e.printStackTrace();
+			System.out.println("Statement 6");
+		}
+		finally {
+			System.out.println("Statement 4");
+		}
+
+	}
+
+}
+=============================================================
+  public class Main2 {
+
+	public static void main(String[] args) {
+		try {
+			System.out.println(10/0);
+		}
+		catch(ArithmeticException e){
+			System.out.println("Statement 1");
+			e.printStackTrace();
+			System.out.println(e);
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+}
