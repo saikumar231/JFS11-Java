@@ -1,0 +1,227 @@
+
+public class DailyRoutineSimulation {
+
+	public static void main(String[] args) {
+		System.out.println("Good Morning");
+		WakeUp();
+		getReady();
+		haveBreakfast();
+		goWorkOrSchool();
+		haveDinner();
+		relax();
+		sleep();
+	}
+
+	private static void WakeUp() {
+		System.out.println("Wake up early in the morning");
+		try {
+			Thread.sleep(2000);
+		}catch(InterruptedException e) {
+			e.printStackTrace();
+		}	
+		System.out.println("Get Out Of Bed");
+	}
+	
+	private static void getReady() {
+		System.out.println("Get Ready for the Day");
+		try {
+			Thread.sleep(3000);
+		}catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Get Ready for the Day");
+	}
+	private static void haveBreakfast() {
+		System.out.println("Have Breakfast");
+		try {
+			Thread.sleep(4000);
+		}catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Breakfast done");
+	}
+	private static void goWorkOrSchool() {
+		System.out.println("Go to work or school");
+		try {
+			Thread.sleep(5000);
+		}catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Arrive at work or school");
+		
+	}
+	private static void haveDinner() {
+		System.out.println("Have Dinner");
+		try {
+			Thread.sleep(3000);
+		}catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Dinner Finished");
+	}
+	private static void relax() {
+		System.out.println("Relax and unwind");
+		try {
+			Thread.sleep(4000);
+		}catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Feeling Relaxed");
+	}
+	private static void sleep() {
+		System.out.println("Go to bed and Sleep");
+		try {
+			Thread.sleep(5000);
+		}catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Good Night!");	
+	}
+
+}
+======================================================================================
+class MyThread4 extends Thread {
+	public void run() {
+
+		for (int i = 0; i < 10; i++) {
+
+			System.out.println("Rama Thread");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+public class Join {
+
+	public static void main(String[] args) {
+		MyThread4 t = new MyThread4();
+		t.start();
+		//t.join();
+		for(int i=0; i<10; i++) {
+			
+			System.out.println("Sita Thread");	
+		}
+
+	}
+
+}
+=========================================================================
+// getname and setname 
+
+class MyThread1 extends Thread {
+
+}
+
+public class Thread_01 {
+	public static void main(String[] args) {
+		System.out.println(Thread.currentThread().getName());
+		Thread.currentThread().setName("Balayya");
+		System.out.println(Thread.currentThread().getName());
+		MyThread1 t = new MyThread1();
+		t.setName("Saikumar");
+		System.out.println(t.getName());
+
+	}
+
+}
+===========================================================
+// get priority and set priority
+class MyThread2 extends Thread {
+
+}
+
+
+public class Thread_02 {
+
+	public static void main(String[] args) {
+		System.out.println(Thread.currentThread().getPriority());
+		Thread.currentThread().setPriority(10);
+		System.out.println(Thread.currentThread().getPriority());
+		
+
+	}
+
+}
+=================================================================
+// yield method
+
+class MyThread3 extends Thread {
+	public void run() {
+	
+	
+	for(int i=0; i<10; i++) {
+		Thread.yield();
+		System.out.println("Rama Thread");	
+	}
+}
+}
+
+
+public class Thread_03 {
+
+	public static void main(String[] args) {
+		MyThread3 t = new MyThread3();
+		t.start();
+		for(int i=0; i<10; i++) {
+			
+			System.out.println("Sita Thread");	
+		}
+		
+
+	}
+
+}
+=======================================================
+// 2.Implementing Runnable Interface
+class MyRunnable implements Runnable{
+	public void run() {
+		for(int i=0; i<10; i++) {
+			System.out.println("Vara Thread");	
+		}
+	}
+}
+
+
+public class ThreadDemo_01 {
+
+	public static void main(String[] args) {
+		MyRunnable r = new MyRunnable();
+		Thread t = new Thread(r);
+		t.start();
+		for(int i=0;i<10;i++) {
+			System.out.println("Deavara Thread");
+		}
+		
+
+	}
+
+}
+==================================================================================
+// defining of thread in two ways. they are 1.Extend Thread class and 2.Implementing runnable interface
+//1.Extend Thread class
+
+class MyThread extends Thread{
+	public void run() {
+		for(int i=0; i<10;i++) {
+			System.out.println("Child Thread");		
+			}
+	}
+}
+
+public class ThreadDemo {
+
+	public static void main(String[] args) {
+		MyThread t = new MyThread();
+		t.start();
+		for(int i=0; i<10;i++) {
+			System.out.println("Main Thread");	
+		}
+		
+
+	}
+
+}
